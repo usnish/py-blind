@@ -22,7 +22,7 @@ blindtext = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 blinds = []
 blindmap = {}
 
-print "This script will generate blinds (A, B, C ...) for files in this folder."
+print "This script will generate blinds (-A-, -B-, -C- ...) for files in this folder."
 
 #Asks for labels
 while True:
@@ -54,8 +54,8 @@ for label in notfound: # remove those not found
 print "Generating blinds for labels found: ",
 print labels
 
-for x in range(len(labels)): # initialize blinds as A, B, C, D, E, F...
-	blinds.append(blindtext[x])
+for x in range(len(labels)): # initialize blinds as -A-, -B-, -C-, -D-, -E-, -F-...
+	blinds.append("-" + blindtext[x] + "-")
 
 random.shuffle(blinds) # shuffle blinds
 
@@ -79,4 +79,4 @@ if confirm("Ready to change filenames. Do you wish to continue? Make sure you're
 		print filename + " processed."
 	print "All done! Happy analysis!"
 else:
-	print "operation canceled. Quitting!"
+	print "Operation canceled. Quitting!"
