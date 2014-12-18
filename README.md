@@ -4,4 +4,4 @@ I made this for my own use while analyzing images in wet lab.
 
 Written for Python 2.7.8 on OSX 10.10.1
 
-Feel free to modify for your own use!
+Feel free to modify for your own use! Licensed under the MIT license.
