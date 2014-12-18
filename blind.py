@@ -38,13 +38,13 @@ while True:
 
 notfound = [] # list of items not found, for removal later
 for label in labels: # looks for each label in filename
-	found = 0
+	found = False
 	for filename in os.listdir("."):
 		if label in filename:
 			print "Label '" + label + "' found!"
-			found = 1
+			found = True
 			break
-	if found == 0:
+	if found == False:
 		print "Label '" + label + "' not found."
 		notfound.append(label)
 
