@@ -72,11 +72,13 @@ print "Blinds written to 'blinds.txt'. Look after you're done!"
 if confirm("Ready to change filenames. Do you wish to continue? Make sure you're working with a *copy* of your data. [y/n]: "):
 	print "Blinding filenames..."
 	for filename in os.listdir("."):
-		newfilename = filename
-		for key in blindmap:
-			newfilename = filename.replace(key, blindmap[key])
+		newfilename = filename.replace('\ ', '_')
+		for x in blindmap:
+                        if x in filename:
+                                newfilename = filename.replace(x, blindmap[x])
 		os.rename(filename, newfilename)
 		print filename + " processed."
+		print newfilename
 	print "All done! Happy analysis!"
 else:
 	print "Operation canceled. Quitting!"
