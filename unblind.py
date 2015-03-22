@@ -34,8 +34,9 @@ if confirm("Ready to change filenames back. Do you wish to continue? Make sure y
 	print "UN-Blinding filenames..."
 	for filename in os.listdir("."):
 		newfilename = filename
-		for key in blindmap:
-			newfilename = filename.replace(blindmap[key], key) # note switched order relative to blind.py
+		for x in blindmap:
+                        if blindmap[x] in filename:
+                                newfilename = filename.replace(blindmap[x], x) # note switched order relative to blind.py
 		os.rename(filename, newfilename)
 		print filename + " processed."
 	print "All done!"
